@@ -42,18 +42,18 @@
 				<p>Somethings more about me</p>
 			</div>
 		</a>
-		<!-- <a href="/blog">
+		<a href="/blog">
 			<div class="card">
 				<h2>Blog</h2>
 				<p>my blog</p>
 			</div>
 		</a>
-		<a href="/resume">
+		<a href="/shop">
 			<div class="card">
-				<h2>Resume</h2>
-				<p>my resume</p>
+				<h2>Shop</h2>
+				<p>product I sell</p>
 			</div>
-		</a> -->
+		</a>
 	</div>
 </main>
 

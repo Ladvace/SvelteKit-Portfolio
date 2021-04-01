@@ -21,7 +21,8 @@
 			</a>
 			<a class="button" href="/about"><div class={segment === '/about' && 'selected'}>About</div></a
 			>
-			<!-- <a class="button" href="/blog"><div class={segment === '/blog' && 'selected'}>Blog</div></a> -->
+			<a class="button" href="/blog"><div class={segment === '/blog' && 'selected'}>Blog</div></a>
+			<a class="button" href="/Shop"><div class={segment === '/Shop' && 'selected'}>Shop</div></a>
 		</div>
 	</div>
 	<div class="responsiveButtons buttons">
@@ -30,7 +31,8 @@
 			><div class={segment === '/projects' && 'selected'}>Projects</div></a
 		>
 		<a class="button" href="/about"><div class={segment === '/about' && 'selected'}>About</div></a>
-		<!-- <a class="button" href="/blog"><div class={segment === '/blog' && 'selected'}>Blog</div></a> -->
+		<a class="button" href="/blog"><div class={segment === '/blog' && 'selected'}>Blog</div></a>
+		<a class="button" href="/Shop"><div class={segment === '/Shop' && 'selected'}>Shop</div></a>
 	</div>
 </div>
 
@@ -89,7 +91,7 @@
 		width: 100%;
 		max-width: 900px;
 		box-sizing: border-box;
-		padding: 0;
+		padding: 20px;
 		height: 80px;
 		overflow: hidden;
 		transition: height 0.2s cubic-bezier(0.455, 0.03, 0.515, 0.955);
@@ -144,7 +146,7 @@
 
 	@media (min-width: 900px) {
 		.NavBar {
-			/* padding: 20px 0 0 0; */
+			padding: 20px 0;
 			display: flex;
 			flex-direction: column;
 			justify-content: center;
