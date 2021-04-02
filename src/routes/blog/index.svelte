@@ -27,8 +27,6 @@
 	const blackListedArticles = [422939];
 
 	const filteredArticles = articles.filter((article) => !blackListedArticles.includes(article.id));
-
-	console.log('article', filteredArticles);
 </script>
 
 <div class="articlesContainer">

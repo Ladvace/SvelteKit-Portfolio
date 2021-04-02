@@ -22,7 +22,7 @@
 			<a class="button" href="/about"><div class={segment === '/about' && 'selected'}>About</div></a
 			>
 			<a class="button" href="/blog"><div class={segment === '/blog' && 'selected'}>Blog</div></a>
-			<a class="button" href="/Shop"><div class={segment === '/Shop' && 'selected'}>Shop</div></a>
+			<a class="button" href="/shop"><div class={segment === '/shop' && 'selected'}>Shop</div></a>
 		</div>
 	</div>
 	<div class="responsiveButtons buttons">
@@ -32,7 +32,7 @@
 		>
 		<a class="button" href="/about"><div class={segment === '/about' && 'selected'}>About</div></a>
 		<a class="button" href="/blog"><div class={segment === '/blog' && 'selected'}>Blog</div></a>
-		<a class="button" href="/Shop"><div class={segment === '/Shop' && 'selected'}>Shop</div></a>
+		<a class="button" href="/shop"><div class={segment === '/shop' && 'selected'}>Shop</div></a>
 	</div>
 </div>
 
