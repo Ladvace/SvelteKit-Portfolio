@@ -3,6 +3,10 @@
 	import Icon from 'svelte-awesome';
 </script>
 
+<svelte:head>
+	<title>Gianmarco Cavallo — Projects</title>
+</svelte:head>
+
 <div class="projectContainer">
 	<div class="projects">
 		<h1>Projects</h1>

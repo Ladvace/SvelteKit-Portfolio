@@ -22,6 +22,10 @@
 	export let article;
 </script>
 
+<svelte:head>
+	<title>Gianmarco Cavallo — {article.title}</title>
+</svelte:head>
+
 <div class="articleContainer">
 	<div class="article">
 		<h1>{article.title}</h1>

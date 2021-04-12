@@ -1,5 +1,6 @@
-<script>
-</script>
+<svelte:head>
+	<title>Gianmarco Cavallo — About</title>
+</svelte:head>
 
 <div class="container">
 	<main>

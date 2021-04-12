@@ -29,6 +29,10 @@
 	const filteredArticles = articles.filter((article) => !blackListedArticles.includes(article.id));
 </script>
 
+<svelte:head>
+	<title>Gianmarco Cavallo — Blog</title>
+</svelte:head>
+
 <div class="articlesContainer">
 	<div class="articles">
 		<h1>Articles</h1>
