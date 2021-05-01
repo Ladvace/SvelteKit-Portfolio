@@ -21,6 +21,7 @@
 		>
 			<Icon class="icon" data={faEnvelope} scale="2.5" />
 		</div>
+
 		<a href="https://github.com/Ladvace" target="_blank">
 			<Icon class="icon" data={faGithub} scale="2.5" />
 		</a>
@@ -87,13 +88,23 @@
 		margin: 50px auto 0;
 	}
 
-	.icons :global(.icon) {
+	.icons a :global(.icon) {
+		cursor: pointer;
+		transition: color 0.2s ease-in-out;
+		color: linear-gradient(43deg, #4158d0 0%, #c850c0 46%, #ffcc70 100%);
+	}
+	.icons div :global(.icon) {
 		cursor: pointer;
 		transition: color 0.2s ease-in-out;
 	}
-	.icons :global(.icon):hover {
-		color: linear-gradient(43deg, #4158d0 0%, #c850c0 46%, #ffcc70 100%);
+	.icons div :global(.icon):hover {
+		color: #f3a712;
 	}
+	.icons a :global(.icon):hover {
+		/* color: linear-gradient(43deg, #4158d0 0%, #c850c0 46%, #ffcc70 100%); */
+		color: #f3a712;
+	}
+
 	.card {
 		font-weight: 700;
 		border: 1px dashed transparent;
