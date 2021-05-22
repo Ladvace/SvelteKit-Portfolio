@@ -1,24 +1,24 @@
 <script context="module">
 	import { ArticleEndPoint } from '$lib/Constants';
 	export async function load({ fetch, page }) {
-		let article;
-
 		try {
-			article = await fetch(`${ArticleEndPoint}/${page.params.slug}`);
+			let article = await fetch(`${ArticleEndPoint}/${page.params.slug}`);
 			article = await article.json();
+			return {
+				props: {
+					article
+				}
+			};
 		} catch (e) {
 			console.log(e);
 		}
-
-		return {
-			props: {
-				article
-			}
-		};
 	}
 </script>
 
 <script>
+	import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
+	import Icon from 'svelte-awesome';
+
 	export let article;
 </script>
 
@@ -28,7 +28,11 @@
 
 <div class="articleContainer">
 	<div class="article">
-		<h1>{article.title}</h1>
+		<h1>
+			<a href={article.url} target="_blank"
+				>{article.title} <Icon data={faExternalLinkAlt} scale="2" /></a
+			>
+		</h1>
 		{@html article.body_html}
 	</div>
 </div>
@@ -79,6 +83,9 @@
 		box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.1), inset 0 0 0 2px rgba(255, 255, 255, 0.1);
 	}
 
+	.article > h1 > a {
+		color: white;
+	}
 	.article:hover {
 		cursor: pointer;
 	}

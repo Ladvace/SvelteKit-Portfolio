@@ -93,13 +93,12 @@
 	}
 
 	:global(body) {
-		/* background-image: linear-gradient(
-			109.6deg,
-			rgba(62, 161, 219, 1) 11.2%,
-			rgba(93, 52, 236, 1) 100.2%
-		); */
+		/* background-color: #09090b; */
 
-		background-color: #09090b;
+		background: #0052d4;
+		background: -webkit-linear-gradient(to right, #6fb1fc, #4364f7, #0052d4);
+		background: linear-gradient(to right, #6fb1fc, #4364f7, #0052d4);
+
 		background-size: 200% 200%;
 		animation: gradient 10s ease infinite;
 		color: white;
@@ -109,6 +108,7 @@
 		line-height: 1.75;
 		place-items: center;
 		height: 100%;
+		overflow-x: hidden;
 	}
 
 	:global(h1) {
@@ -117,7 +117,7 @@
 
 	:global(::selection) {
 		color: white;
-		background: #f3a712;
+		background: #0052d4;
 	}
 
 	:global(::-webkit-scrollbar) {

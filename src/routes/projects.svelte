@@ -1,6 +1,7 @@
 <script>
 	import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
 	import Icon from 'svelte-awesome';
+	import projects from '$lib/Projects';
 </script>
 
 <svelte:head>
@@ -10,37 +11,21 @@
 <div class="projectContainer">
 	<div class="projects">
 		<h1>Projects</h1>
-		<a href="https://github.com/gorilla-devs/GDLauncher">
-			<div class="project">
-				<div class="header">
-					<h2>GDLauncher <Icon data={faExternalLinkAlt} /></h2>
-					<h4>Languages/Tech: Node, React, Redux, Electron...</h4>
+
+		{#each projects as project}
+			<a href={project.url}>
+				<div class="project">
+					<div class="header">
+						<h2>{project.title} <Icon data={faExternalLinkAlt} /></h2>
+						<h4>Languages/Tech: Node, React, Redux, Electron...</h4>
+					</div>
+					<p>
+						{project.description}
+					</p>
+					<!-- <Button>CIAO</Button> -->
 				</div>
-				<p>
-					GDLauncher is a simple, yet powerful Minecraft custom launcher with a strong focus on the
-					user experience
-				</p>
-				<!-- <Button>CIAO</Button> -->
-			</div>
-		</a>
-		<a href="https://github.com/Ladvace/WiseMan-DiscordBot">
-			<div class="project">
-				<div class="header">
-					<h2>WiseMan Discord Bot <Icon data={faExternalLinkAlt} /></h2>
-					<h4>Languages/Tech: Node, FireBase/MongoDb</h4>
-				</div>
-				<p>The wiseMan bot allows you to level up based on the time you spend in a vocal channel</p>
-			</div>
-		</a>
-		<a href="https://github.com/Ladvace/easy-react-carousel">
-			<div class="project">
-				<div class="header">
-					<h2>easy-react-carousel <Icon data={faExternalLinkAlt} /></h2>
-					<h4>Languages/Tech: React</h4>
-				</div>
-				<p>A simple carousel made in reactjs</p>
-			</div>
-		</a>
+			</a>
+		{/each}
 	</div>
 </div>
 
@@ -117,6 +102,7 @@
 		display: grid;
 		grid-gap: 1rem;
 		grid-template-columns: 1fr;
+		margin-bottom: 10px;
 	}
 
 	@media (min-width: 900px) {
