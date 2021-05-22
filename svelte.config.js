@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 const adapter = require('@sveltejs/adapter-netlify');
 module.exports = {
 	kit: {
