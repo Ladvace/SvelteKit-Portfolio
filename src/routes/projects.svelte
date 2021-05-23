@@ -1,6 +1,5 @@
 <script>
-	import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
-	import Icon from 'svelte-awesome';
+	import FaExternalLinkAlt from 'svelte-icons/fa/FaExternalLinkAlt.svelte';
 	import projects from '$lib/Projects';
 </script>
 
@@ -11,12 +10,14 @@
 <div class="projectContainer">
 	<div class="projects">
 		<h1>Projects</h1>
-
 		{#each projects as project}
 			<a href={project.url}>
 				<div class="project">
 					<div class="header">
-						<h2>{project.title} <Icon data={faExternalLinkAlt} /></h2>
+						<h2>
+							{project.title}
+							<div class="icon"><FaExternalLinkAlt /></div>
+						</h2>
 						<h4>
 							Technologies:
 							<div class="techs">
@@ -29,7 +30,6 @@
 					<p>
 						{project.description}
 					</p>
-					<!-- <Button>CIAO</Button> -->
 				</div>
 			</a>
 		{/each}
@@ -60,7 +60,19 @@
 		margin-top: 30px;
 	}
 
+	.icon {
+		width: 20px;
+		height: 20px;
+		margin-left: 10px;
+	}
+
+	h1 {
+		font-weight: 700;
+		text-align: start;
+	}
+
 	h2 {
+		display: flex;
 		margin: 0;
 	}
 
@@ -68,7 +80,6 @@
 		text-align: start;
 		box-sizing: border-box;
 		font-weight: 700;
-		border: 1px dashed transparent;
 		display: flex;
 		flex-direction: column;
 		color: white;
@@ -115,7 +126,7 @@
 		align-items: center;
 	}
 	.techs > div {
-		margin: 0 10px;
+		margin: 0 0 0 10px;
 	}
 
 	@media (min-width: 900px) {

@@ -1,8 +1,8 @@
 <script>
 	import { onMount } from 'svelte';
-	import Icon from 'svelte-awesome';
-	import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
-	import { faGithub, faLinkedin, faInstagram } from '@fortawesome/free-brands-svg-icons';
+	import FaLinkedin from 'svelte-icons/fa/FaLinkedin.svelte';
+	import FaGithub from 'svelte-icons/fa/FaGithub.svelte';
+	import FaEnvelope from 'svelte-icons/fa/FaEnvelope.svelte';
 	import { prefetchRoutes } from '$app/navigation';
 	import { modalOpened } from '$lib/store';
 
@@ -19,14 +19,20 @@
 				modalOpened.set(true);
 			}}
 		>
-			<Icon class="icon" data={faEnvelope} scale="2.5" />
+			<div class="icon">
+				<FaEnvelope />
+			</div>
 		</div>
 
 		<a href="https://github.com/Ladvace" target="_blank">
-			<Icon class="icon" data={faGithub} scale="2.5" />
+			<div class="icon">
+				<FaGithub />
+			</div>
 		</a>
 		<a href="https://www.linkedin.com/in/ladvace/" target="_blank">
-			<Icon class="icon" data={faLinkedin} scale="2.5" />
+			<div class="icon">
+				<FaLinkedin />
+			</div>
 		</a>
 	</div>
 
@@ -88,20 +94,12 @@
 		margin: 50px auto 0;
 	}
 
-	.icons a :global(.icon) {
+	.icon {
 		cursor: pointer;
 		transition: color 0.2s ease-in-out;
-		color: linear-gradient(43deg, #4158d0 0%, #c850c0 46%, #ffcc70 100%);
+		width: 40px;
 	}
-	.icons div :global(.icon) {
-		cursor: pointer;
-		transition: color 0.2s ease-in-out;
-	}
-	.icons div :global(.icon):hover {
-		color: #f3a712;
-	}
-	.icons a :global(.icon):hover {
-		/* color: linear-gradient(43deg, #4158d0 0%, #c850c0 46%, #ffcc70 100%); */
+	.icon:hover {
 		color: #f3a712;
 	}
 

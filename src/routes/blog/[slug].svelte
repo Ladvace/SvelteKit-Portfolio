@@ -16,8 +16,7 @@
 </script>
 
 <script>
-	import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
-	import Icon from 'svelte-awesome';
+	import FaExternalLinkAlt from 'svelte-icons/fa/FaExternalLinkAlt.svelte';
 
 	export let article;
 </script>
@@ -29,9 +28,7 @@
 <div class="articleContainer">
 	<div class="article">
 		<h1>
-			<a href={article.url} target="_blank"
-				>{article.title} <Icon data={faExternalLinkAlt} scale="2" /></a
-			>
+			<a href={article.url} target="_blank">{article.title} <FaExternalLinkAlt /></a>
 		</h1>
 		{@html article.body_html}
 	</div>

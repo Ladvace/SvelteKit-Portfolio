@@ -56,8 +56,6 @@
 
 	.selected:after {
 		content: '';
-		/* background: linear-gradient(315deg, #4158d0 0%, #c850c0 46%, #ffcc70 100%); */
-		/* background: white; */
 		background-image: linear-gradient(
 			109.6deg,
 			rgba(62, 161, 219, 1) 11.2%,

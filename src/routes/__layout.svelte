@@ -1,10 +1,9 @@
 <script>
 	import Navbar from '$lib/components/NavBar.svelte';
 	import Button from '$lib/components/Button.svelte';
-	import { faCopy } from '@fortawesome/free-solid-svg-icons';
+	import FaCopy from 'svelte-icons/fa/FaCopy.svelte';
 	import Tooltip from '$lib/components/Tooltip.svelte';
 	import CopyClipBoard from '$lib/components/CopyToClipBoard.svelte';
-	import Icon from 'svelte-awesome';
 
 	import { page } from '$app/stores';
 	import Modal from '$lib/components/Modal.svelte';
@@ -39,7 +38,9 @@
 							}, 500);
 						}}
 					>
-						<Icon data={faCopy} />
+						<div>
+							<FaCopy />
+						</div>
 					</div>
 				</Tooltip>
 			</div>
@@ -62,7 +63,7 @@
 	}
 
 	:global(#svelte) {
-		width: 100%;
+		width: 100vw;
 		height: 100%;
 		max-width: 900px;
 
@@ -95,9 +96,21 @@
 	:global(body) {
 		/* background-color: #09090b; */
 
-		background: #0052d4;
+		/* background: #0052d4;
 		background: -webkit-linear-gradient(to right, #6fb1fc, #4364f7, #0052d4);
-		background: linear-gradient(to right, #6fb1fc, #4364f7, #0052d4);
+		background: linear-gradient(to right, #6fb1fc, #4364f7, #0052d4); */
+
+		background: #dc2424; /* fallback for old browsers */
+		background: -webkit-linear-gradient(
+			to right,
+			#4a569d,
+			#dc2424
+		); /* Chrome 10-25, Safari 5.1-6 */
+		background: linear-gradient(
+			to right,
+			#4a569d,
+			#dc2424
+		); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
 		background-size: 200% 200%;
 		animation: gradient 10s ease infinite;
@@ -117,7 +130,7 @@
 
 	:global(::selection) {
 		color: white;
-		background: #0052d4;
+		background: #f3a712;
 	}
 
 	:global(::-webkit-scrollbar) {

@@ -19,8 +19,7 @@
 </script>
 
 <script>
-	import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
-	import Icon from 'svelte-awesome';
+	import FaExternalLinkAlt from 'svelte-icons/fa/FaExternalLinkAlt.svelte';
 
 	export let articles;
 
@@ -38,11 +37,13 @@
 		<h1>Articles</h1>
 
 		{#each filteredArticles as article}
-			<!-- {#if blackListedArticles.includes(articles.id)} -->
 			<a href={`/blog/${article.id}`}>
 				<div class="article">
 					<div class="header">
-						<h2>{article.title} <Icon data={faExternalLinkAlt} /></h2>
+						<h2>
+							{article.title}
+							<div class="icon"><FaExternalLinkAlt /></div>
+						</h2>
 						<h4>Tags: {article.tags}</h4>
 					</div>
 					<p>
@@ -50,7 +51,6 @@
 					</p>
 				</div>
 			</a>
-			<!-- {/if} -->
 		{/each}
 		{#if filteredArticles.length === 0}
 			<div>No Articles</div>
@@ -76,11 +76,6 @@
 		text-decoration: none;
 	}
 
-	h1 {
-		font-weight: 700;
-		text-align: start;
-	}
-
 	.articlesContainer .articles {
 		display: grid;
 		grid-template-columns: 1fr;
@@ -88,9 +83,21 @@
 		margin-top: 30px;
 	}
 
+	h2 {
+		display: flex;
+	}
+
 	.articles > h1 {
+		font-weight: 700;
+		text-align: start;
 		margin: 0;
 		font-size: 36px;
+	}
+
+	.icon {
+		width: 20px;
+		height: 20px;
+		margin-left: 10px;
 	}
 
 	.article {
