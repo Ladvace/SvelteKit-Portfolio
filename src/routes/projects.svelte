@@ -17,7 +17,14 @@
 				<div class="project">
 					<div class="header">
 						<h2>{project.title} <Icon data={faExternalLinkAlt} /></h2>
-						<h4>Languages/Tech: Node, React, Redux, Electron...</h4>
+						<h4>
+							Technologies:
+							<div class="techs">
+								{#each project.technologies as tech}
+									<div>{tech}</div>
+								{/each}
+							</div>
+						</h4>
 					</div>
 					<p>
 						{project.description}
@@ -46,11 +53,6 @@
 		text-decoration: none;
 	}
 
-	h1 {
-		font-weight: 700;
-		text-align: start;
-	}
-
 	.projectContainer .projects {
 		display: grid;
 		grid-template-columns: 1fr;
@@ -58,9 +60,8 @@
 		margin-top: 30px;
 	}
 
-	.projects > h1 {
+	h2 {
 		margin: 0;
-		font-size: 36px;
 	}
 
 	.project {
@@ -93,7 +94,6 @@
 		border: 1px dashed white;
 		transform: scale(1.01);
 		cursor: pointer;
-		/* background: #24262d; */
 	}
 
 	.projects {
@@ -103,6 +103,19 @@
 		grid-gap: 1rem;
 		grid-template-columns: 1fr;
 		margin-bottom: 10px;
+	}
+
+	.header h4 {
+		display: flex;
+		margin: 0 0 10px 0;
+	}
+	.techs {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	.techs > div {
+		margin: 0 10px;
 	}
 
 	@media (min-width: 900px) {
