@@ -118,6 +118,7 @@
 
 	.header h4 {
 		display: flex;
+		flex-direction: column;
 		margin: 0 0 10px 0;
 	}
 	.techs {
