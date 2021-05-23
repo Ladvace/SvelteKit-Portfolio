@@ -2,10 +2,21 @@
 	<title>Gianmarco Cavallo — Shop</title>
 </svelte:head>
 
-<h1>Working in Progress</h1>
+<div class="shopContainer">
+	<h1>Working in Progress</h1>
+</div>
 
 <style>
-	h1 {
+	.shopContainer {
+		width: 100%;
+		height: calc(100vh - 48px - 80px);
+		max-width: 900px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		box-sizing: border-box;
 		text-align: center;
+		padding: 1em;
+		margin: 0 auto;
 	}
 </style>
