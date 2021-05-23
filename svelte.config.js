@@ -1,14 +1,8 @@
-/* eslint-disable no-undef */
-const adapter = require('@sveltejs/adapter-netlify');
-module.exports = {
+import adapter from '@sveltejs/adapter-netlify';
+
+export default {
 	kit: {
 		adapter: adapter(), // currently the adapter does not take any options
-		target: '#svelte',
-		prerender: {
-			crawl: true,
-			enabled: true,
-			force: true,
-			pages: ['*']
-		}
+		target: '#svelte'
 	}
 };
