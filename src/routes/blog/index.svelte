@@ -19,8 +19,6 @@
 </script>
 
 <script>
-	import FaExternalLinkAlt from 'svelte-icons/fa/FaExternalLinkAlt.svelte';
-
 	export let articles;
 
 	const blackListedArticles = [422939];
@@ -42,7 +40,6 @@
 					<div class="header">
 						<h2>
 							{article.title}
-							<div class="icon"><FaExternalLinkAlt /></div>
 						</h2>
 						<h4>Tags: {article.tags}</h4>
 					</div>
@@ -92,12 +89,6 @@
 		text-align: start;
 		margin: 0;
 		font-size: 36px;
-	}
-
-	.icon {
-		width: 20px;
-		height: 20px;
-		margin-left: 10px;
 	}
 
 	.article {

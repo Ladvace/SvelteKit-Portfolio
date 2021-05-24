@@ -28,10 +28,8 @@
 <div class="articleContainer">
 	<div class="article">
 		<h1 class="title">
-			<a href={article.url} target="_blank"
-				>{article.title}
-				<div class="icon"><FaExternalLinkAlt /></div></a
-			>
+			<a href={article.url} target="_blank">{article.title} </a>
+			<div class="icon" href={article.url} target="_blank"><FaExternalLinkAlt /></div>
 		</h1>
 		{@html article.body_html}
 	</div>
