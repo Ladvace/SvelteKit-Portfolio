@@ -28,7 +28,10 @@
 <div class="articleContainer">
 	<div class="article">
 		<h1>
-			<a href={article.url} target="_blank">{article.title} <FaExternalLinkAlt /></a>
+			<a href={article.url} target="_blank"
+				>{article.title}
+				<div class="icon"><FaExternalLinkAlt /></div></a
+			>
 		</h1>
 		{@html article.body_html}
 	</div>
@@ -78,6 +81,11 @@
 		-webkit-animation: cardWobble 10000ms infinite;
 		animation: cardWobble 10000ms infinite;
 		box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.1), inset 0 0 0 2px rgba(255, 255, 255, 0.1);
+	}
+	.icon {
+		width: 20px;
+		height: 20px;
+		margin-left: 10px;
 	}
 
 	.article > h1 > a {
