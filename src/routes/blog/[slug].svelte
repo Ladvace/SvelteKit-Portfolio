@@ -27,7 +27,7 @@
 
 <div class="articleContainer">
 	<div class="article">
-		<h1>
+		<h1 class="title">
 			<a href={article.url} target="_blank"
 				>{article.title}
 				<div class="icon"><FaExternalLinkAlt /></div></a
@@ -56,6 +56,9 @@
 		text-align: start;
 		margin: 0;
 		/* font-size: 36px; */
+	}
+	.title {
+		display: flex;
 	}
 
 	.article :global(img) {
