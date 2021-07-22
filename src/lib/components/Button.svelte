@@ -1,8 +1,9 @@
 <script>
 	import { goto } from '$app/navigation';
+	export let onclick;
 </script>
 
-<div class="button" on:click={() => goto('mailto:cavallogianmarco@gmail.com')}>
+<div class="button" on:click={onclick}>
 	<slot />
 </div>
 
@@ -24,10 +25,9 @@
 		height: 40px;
 		max-width: 200px;
 		border-radius: 10px;
+		padding: 0 10px;
 		background: linear-gradient(43deg, #4158d0 0%, #c850c0 46%, #ffcc70 100%);
-
 		background-size: 150% 150%;
-
 		display: flex;
 		justify-content: center;
 		align-items: center;

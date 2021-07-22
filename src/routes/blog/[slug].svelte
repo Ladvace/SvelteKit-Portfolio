@@ -27,10 +27,12 @@
 
 <div class="articleContainer">
 	<div class="article">
-		<h1 class="title">
-			<a href={article.url} target="_blank">{article.title} </a>
-			<div class="icon" href={article.url} target="_blank"><FaExternalLinkAlt /></div>
-		</h1>
+		<a href={article.url} target="_blank">
+			<h1 class="title">
+				{article.title}
+				<div class="icon" href={article.url} target="_blank"><FaExternalLinkAlt /></div>
+			</h1>
+		</a>
 		{@html article.body_html}
 	</div>
 </div>
@@ -57,6 +59,7 @@
 	}
 	.title {
 		display: flex;
+		color: white;
 	}
 
 	.article :global(img) {
@@ -84,14 +87,14 @@
 		box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.1), inset 0 0 0 2px rgba(255, 255, 255, 0.1);
 	}
 	.icon {
-		width: 20px;
-		height: 20px;
+		margin: 40px;
+		height: 40px;
+		font-size: 10px;
 		margin-left: 10px;
-	}
-
-	.article > h1 > a {
+		width: 50px;
 		color: white;
 	}
+
 	.article:hover {
 		cursor: pointer;
 	}

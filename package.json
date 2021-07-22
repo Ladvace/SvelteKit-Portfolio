@@ -27,6 +27,7 @@
 		"node": ">= 12.17.0"
 	},
 	"dependencies": {
+		"@chec/commerce.js": "^2.7.2",
 		"svelte-icons": "^2.1.0"
 	}
 }

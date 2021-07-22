@@ -46,7 +46,7 @@
 	.open {
 		flex-direction: column !important;
 		align-items: center !important;
-		height: 260px !important;
+		height: 340px !important;
 		transition: height 0.2s cubic-bezier(0.455, 0.03, 0.515, 0.955);
 	}
 

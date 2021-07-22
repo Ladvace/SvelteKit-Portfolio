@@ -3,7 +3,11 @@
 	import Button from '$lib/components/Button.svelte';
 	import FaCopy from 'svelte-icons/fa/FaCopy.svelte';
 	import Tooltip from '$lib/components/Tooltip.svelte';
+	import { goto } from '$app/navigation';
 	import CopyClipBoard from '$lib/components/CopyToClipBoard.svelte';
+
+	// import Commerce from '@chec/commerce.js';
+	// const commerce = new Commerce(process.env.ECOMMERCEPUBLICAPI, true);
 
 	import { page } from '$app/stores';
 	import Modal from '$lib/components/Modal.svelte';
@@ -45,7 +49,7 @@
 				</Tooltip>
 			</div>
 		</div>
-		<Button>Send Email</Button>
+		<Button onclick={() => goto('mailto:cavallogianmarco@gmail.com')}>Send Email</Button>
 	</div>
 </Modal>
 <Navbar segment={$page.path} />
