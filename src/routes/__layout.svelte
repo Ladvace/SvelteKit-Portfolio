@@ -95,22 +95,7 @@
 
 	:global(body) {
 		/* background-color: #09090b; */
-
-		/* background: #0052d4;
-		background: -webkit-linear-gradient(to right, #6fb1fc, #4364f7, #0052d4);
-		background: linear-gradient(to right, #6fb1fc, #4364f7, #0052d4); */
-
-		background: #dc2424; /* fallback for old browsers */
-		background: -webkit-linear-gradient(
-			to right,
-			#4a569d,
-			#dc2424
-		); /* Chrome 10-25, Safari 5.1-6 */
-		background: linear-gradient(
-			to right,
-			#4a569d,
-			#dc2424
-		); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+		background-color: #0a0908;
 
 		background-size: 200% 200%;
 		animation: gradient 10s ease infinite;
@@ -192,7 +177,7 @@
 	footer {
 		font-size: 16px;
 		font-weight: 400;
-		padding: 10px 0;
+		padding: 30px 0;
 		max-width: 900px;
 		text-align: center;
 		width: 100%;

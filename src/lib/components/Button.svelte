@@ -7,24 +7,13 @@
 </div>
 
 <style>
-	@keyframes gradient {
-		0% {
-			background-position: 0% 50%;
-		}
-		50% {
-			background-position: 100% 50%;
-		}
-		100% {
-			background-position: 0% 50%;
-		}
-	}
 
 	.button {
 		cursor: pointer;
 		height: 40px;
 		max-width: 200px;
 		border-radius: 10px;
-		background: linear-gradient(43deg, #4158d0 0%, #c850c0 46%, #ffcc70 100%);
+		background: black;
 
 		background-size: 150% 150%;
 

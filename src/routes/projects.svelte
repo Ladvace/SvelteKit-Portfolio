@@ -11,27 +11,27 @@
 	<div class="projects">
 		<h1>Projects</h1>
 		{#each projects as project}
-			<a href={project.url}>
-				<div class="project">
-					<div class="header">
-						<h2>
-							{project.title}
-							<div class="icon"><FaExternalLinkAlt /></div>
-						</h2>
-						<h4>
-							Technologies:
-							<div class="techs">
-								{#each project.technologies as tech}
-									<div>{tech}</div>
-								{/each}
-							</div>
-						</h4>
+			<div class="project">
+				<div class="header">
+					<h2>
+						{project.title}
+					</h2>
+					<div class="techsContainer">
+						Technologies:
+						<div class="techs">
+							{#each project.technologies as tech}
+								<div>{tech}</div>
+							{/each}
+						</div>
 					</div>
-					<p>
-						{project.description}
-					</p>
 				</div>
-			</a>
+				<p>
+					{project.description}
+				</p>
+				<a href={project.url} target="_blank">
+					<div class="button">Project url =></div>
+				</a>
+			</div>
 		{/each}
 	</div>
 </div>
@@ -60,12 +60,6 @@
 		margin-top: 30px;
 	}
 
-	.icon {
-		width: 20px;
-		height: 20px;
-		margin-left: 10px;
-	}
-
 	h1 {
 		font-weight: 700;
 		text-align: start;
@@ -79,32 +73,20 @@
 	.project {
 		text-align: start;
 		box-sizing: border-box;
-		font-weight: 700;
 		display: flex;
 		flex-direction: column;
 		color: white;
+		background: #111;
 		padding: 2rem;
 		width: 100%;
 		border-radius: 5px;
-		transition: transform 0.2s ease-in-out, background 0.2s ease-in-out;
-
+		transition: transform 0.2s ease-in-out;
 		border-radius: 25px;
-		background: linear-gradient(155deg, rgba(255, 255, 255, 0.15), transparent);
-		-webkit-backdrop-filter: blur(20px);
-		backdrop-filter: blur(20px);
-		-webkit-animation: cardWobble 10000ms infinite;
-		animation: cardWobble 10000ms infinite;
-		box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.1), inset 0 0 0 2px rgba(255, 255, 255, 0.1);
 	}
 
 	.project p {
 		font-weight: 100;
-	}
-
-	.project:hover {
-		border: 1px dashed white;
-		transform: scale(1.01);
-		cursor: pointer;
+		color: #708090;
 	}
 
 	.projects {
@@ -116,11 +98,12 @@
 		margin-bottom: 10px;
 	}
 
-	.header h4 {
+	.techsContainer {
 		display: flex;
-		flex-direction: column;
-		margin: 0 0 10px 0;
+		flex-wrap: wrap;
+		gap: 10px;
 	}
+
 	.techs {
 		display: flex;
 		justify-content: space-between;
@@ -128,6 +111,15 @@
 	}
 	.techs > div {
 		margin: 0 0 0 10px;
+	}
+
+	.button {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		color: white;
+		border: 2px solid white;
+		padding: 10px;
 	}
 
 	@media (min-width: 900px) {
@@ -144,8 +136,10 @@
 		}
 
 		.projects .project {
-			/* height: 100%; */
 			min-height: 200px;
+		}
+		.button {
+			max-width: 200px;
 		}
 	}
 

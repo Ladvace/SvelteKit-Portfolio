@@ -9,7 +9,6 @@
 <style>
 	.shopContainer {
 		width: 100%;
-		height: calc(100vh - 48px - 80px);
 		max-width: 900px;
 		display: flex;
 		justify-content: center;

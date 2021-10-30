@@ -10,7 +10,7 @@
 				}
 			};
 		} catch (e) {
-			console.log(e);
+			// console.error(e);
 		}
 	}
 </script>
@@ -69,19 +69,9 @@
 		font-weight: 700;
 		display: flex;
 		flex-direction: column;
-		color: white;
 		padding: 30px;
 		width: 100%;
 		border-radius: 5px;
-		transition: transform 0.2s ease-in-out, background 0.2s ease-in-out;
-
-		border-radius: 25px;
-		background: linear-gradient(155deg, rgba(255, 255, 255, 0.15), transparent);
-		-webkit-backdrop-filter: blur(20px);
-		backdrop-filter: blur(20px);
-		-webkit-animation: cardWobble 10000ms infinite;
-		animation: cardWobble 10000ms infinite;
-		box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.1), inset 0 0 0 2px rgba(255, 255, 255, 0.1);
 	}
 	.icon {
 		width: 20px;
