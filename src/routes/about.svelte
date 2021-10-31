@@ -15,6 +15,7 @@
 <style>
 	.container {
 		max-width: 900px;
+		padding: 1em;
 		display: flex;
 		justify-content: center;
 	}

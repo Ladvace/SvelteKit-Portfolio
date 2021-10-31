@@ -12,7 +12,7 @@
 </script>
 
 <main>
-	<h1>Hi!✋ I'm Gianmarco a Front-End Developer 💻 based in Italy</h1>
+	<h1>Hi!✋ <br /> I'm Gianmarco a Front-End Developer 💻 based in Italy</h1>
 	<div class="icons">
 		<div
 			on:click={() => {
@@ -83,7 +83,7 @@
 		width: 40px;
 	}
 	.icon:hover {
-		color: #f3a712;
+		color: #ca3c25;
 	}
 
 	@media (min-width: 900px) {

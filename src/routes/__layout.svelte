@@ -1,3 +1,23 @@
+<script context="module">
+	export async function load() {
+		let showCookieModal;
+
+		try {
+			const showCookie = localStorage.getItem('showCookieModal');
+			if (showCookie !== null) showCookieModal = JSON.parse(showCookie);
+			else showCookieModal = true;
+		} catch (e) {
+			// console.error(e);
+		}
+
+		return {
+			props: {
+				showCookieModal
+			}
+		};
+	}
+</script>
+
 <script>
 	import Navbar from '$lib/components/NavBar.svelte';
 	import Button from '$lib/components/Button.svelte';
@@ -10,6 +30,7 @@
 
 	let copied = false;
 	let email = 'cavallogianmarco@gmail.com';
+	export let showCookieModal;
 
 	const copy = () => {
 		const app = new CopyClipBoard({
@@ -19,6 +40,20 @@
 		app.$destroy();
 	};
 </script>
+
+{#if showCookieModal}
+	<div class="cookieContainer">
+		<p>🍪 This website use <a href="privacy-policy">Cookies.</a></p>
+		<div
+			on:click={() => {
+				showCookieModal = false;
+				localStorage.setItem('showCookieModal', false);
+			}}
+		>
+			&#10005;
+		</div>
+	</div>
+{/if}
 
 <Modal>
 	<div slot="content" class="modalContainer">
@@ -81,24 +116,10 @@
 		font-family: 'Fira Code', monospace;
 	}
 
-	@keyframes gradient {
-		0% {
-			background-position: 0% 50%;
-		}
-		50% {
-			background-position: 100% 50%;
-		}
-		100% {
-			background-position: 0% 50%;
-		}
-	}
-
 	:global(body) {
 		/* background-color: #09090b; */
 		background-color: #0a0908;
-
 		background-size: 200% 200%;
-		animation: gradient 10s ease infinite;
 		color: white;
 		margin: 0;
 		box-sizing: border-box;
@@ -115,7 +136,7 @@
 
 	:global(::selection) {
 		color: white;
-		background: #f3a712;
+		background: #ca3c25;
 	}
 
 	:global(::-webkit-scrollbar) {
@@ -174,6 +195,32 @@
 		visibility: hidden;
 	}
 
+	.cookieContainer {
+		background: white;
+		border-radius: 0px;
+		text-align: center;
+		width: 100%;
+		height: 30px;
+		color: black;
+		padding: 30px;
+		display: flex;
+		justify-content: space-evenly;
+		align-items: center;
+		position: absolute;
+		bottom: 0px;
+		left: 0;
+		right: 0;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.cookieContainer > p > a {
+		text-decoration: underline;
+	}
+
+	.cookieContainer > div {
+		cursor: pointer;
+	}
+
 	footer {
 		font-size: 16px;
 		font-weight: 400;
@@ -192,12 +239,32 @@
 	}
 
 	footer .me {
-		color: #f3a712;
+		color: #ca3c25;
 	}
 
 	@media (min-width: 900px) {
 		:global(.tooltip) {
 			visibility: visible;
 		}
+	}
+	@media (min-width: 600px) {
+		.cookieContainer {
+		background: white;
+		border-radius: 50px;
+		text-align: center;
+		width: 350px;
+		height: 30px;
+		color: black;
+		padding: 0 10px;
+		display: flex;
+		justify-content: space-evenly;
+		align-items: center;
+		position: absolute;
+		bottom: 50px;
+		left: 0;
+		right: 0;
+		margin-left: auto;
+		margin-right: auto;
+	}
 	}
 </style>

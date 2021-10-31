@@ -56,11 +56,7 @@
 
 	.selected:after {
 		content: '';
-		background-image: linear-gradient(
-			109.6deg,
-			rgba(62, 161, 219, 1) 11.2%,
-			rgba(93, 52, 236, 1) 100.2%
-		);
+		background: #ca3c25;
 		display: block;
 		height: 3px;
 		width: 100%;

@@ -13,7 +13,7 @@
 		height: 40px;
 		max-width: 200px;
 		border-radius: 10px;
-		background: black;
+		background: #ca3c25;
 
 		background-size: 150% 150%;
 
