@@ -1,7 +1,7 @@
 <script>
 	import Burger from './Hamburger.svelte';
 	import Logo from '../../../static/logo.svg';
-	import routes from '$lib/routes';
+	import routes from '../routes';
 	let opened = false;
 	export let segment;
 </script>
