@@ -1,5 +1,5 @@
 <script context="module">
-	import { ArticleEndPoint } from '$lib/constants';
+	import { ArticleEndPoint } from '$lib/Constants';
 	export async function load({ fetch, page }) {
 		try {
 			let article = await fetch(`${ArticleEndPoint}/${page.params.slug}`);
