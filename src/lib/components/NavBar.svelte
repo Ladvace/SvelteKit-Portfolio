@@ -1,7 +1,7 @@
 <script>
 	import Burger from './Hamburger.svelte';
 	import Logo from '../../../static/logo.svg';
-
+	import routes from '$lib/routes';
 	let opened = false;
 	export let segment;
 </script>
@@ -15,24 +15,19 @@
 			<Burger bind:open={opened} />
 		</div>
 		<div class="buttons">
-			<a class="button" href="/"><div class={segment === '/' && 'selected'}>Home</div></a>
-			<a class="button" href="/projects"
-				><div class={segment === '/projects' && 'selected'}>Projects</div>
-			</a>
-			<a class="button" href="/about"><div class={segment === '/about' && 'selected'}>About</div></a
-			>
-			<a class="button" href="/blog"><div class={segment === '/blog' && 'selected'}>Blog</div></a>
-			<a class="button" href="/shop"><div class={segment === '/shop' && 'selected'}>Shop</div></a>
+			{#each routes as route}
+				<a class="button" href={route.href}
+					><div class={segment === route.href && 'selected'}>{route.label}</div></a
+				>
+			{/each}
 		</div>
 	</div>
 	<div class="responsiveButtons buttons">
-		<a class="button" href="/"><div class={segment === '/' && 'selected'}>Home</div></a>
-		<a class="button" href="/projects"
-			><div class={segment === '/projects' && 'selected'}>Projects</div></a
-		>
-		<a class="button" href="/about"><div class={segment === '/about' && 'selected'}>About</div></a>
-		<a class="button" href="/blog"><div class={segment === '/blog' && 'selected'}>Blog</div></a>
-		<a class="button" href="/shop"><div class={segment === '/shop' && 'selected'}>Shop</div></a>
+		{#each routes as route}
+			<a class="button" href={route.href}
+				><div class={segment === route.href && 'selected'}>{route.label}</div></a
+			>
+		{/each}
 	</div>
 </div>
 
@@ -46,7 +41,7 @@
 	.open {
 		flex-direction: column !important;
 		align-items: center !important;
-		height: 260px !important;
+		height: 330px !important;
 		transition: height 0.2s cubic-bezier(0.455, 0.03, 0.515, 0.955);
 	}
 

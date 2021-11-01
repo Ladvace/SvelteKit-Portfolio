@@ -1,6 +1,5 @@
 <script>
-	import FaExternalLinkAlt from 'svelte-icons/fa/FaExternalLinkAlt.svelte';
-	import projects from '$lib/Projects';
+	import projects from '$lib/projects';
 </script>
 
 <svelte:head>

@@ -1,5 +1,5 @@
 <script context="module">
-	import { UserInfoEndpoint } from '$lib/Constants';
+	import { UserInfoEndpoint } from '$lib/constants';
 	export async function load({ fetch }) {
 		let articles;
 
