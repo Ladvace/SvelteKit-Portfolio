@@ -1,20 +1,15 @@
 <svelte:head>
 	<title>Gianmarco Cavallo — About</title>
-	<!-- Hotjar Tracking Code for https://gianmarco.xyz -->
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
 	<script>
-		(function (h, o, t, j, a, r) {
-			h.hj =
-				h.hj ||
-				function () {
-					(h.hj.q = h.hj.q || []).push(arguments);
-				};
-			h._hjSettings = { hjid: 2388272, hjsv: 6 };
-			a = o.getElementsByTagName('head')[0];
-			r = o.createElement('script');
-			r.async = 1;
-			r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
-			a.appendChild(r);
-		})(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
+		window.dataLayer = window.dataLayer || [];
+		function gtag() {
+			window.dataLayer.push(arguments);
+		}
+		gtag('js', new Date());
+
+		gtag('config', 'G-B4HJHY6RC4');
 	</script>
 </svelte:head>
 
