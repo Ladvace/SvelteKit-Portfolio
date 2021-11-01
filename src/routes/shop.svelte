@@ -14,7 +14,8 @@
 </svelte:head>
 
 <div class="shopContainer">
-	<h1>Working in Progress</h1>
+	<script src="https://gumroad.com/js/gumroad.js"></script>
+	<a class="gumroad-button" href="https://gumroad.com/l/XdDuL">Portfolio template in svelte</a>
 </div>
 
 <style>
