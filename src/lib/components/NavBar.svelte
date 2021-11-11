@@ -47,6 +47,7 @@
 
 	.selected {
 		position: relative;
+		font-weight: 800;
 	}
 
 	.selected:after {
@@ -90,6 +91,7 @@
 		display: none;
 		justify-content: space-between;
 		align-items: center;
+		font-weight: 400;
 	}
 
 	.responsiveButtons {

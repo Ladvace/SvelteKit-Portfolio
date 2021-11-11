@@ -15,10 +15,6 @@ const routes = [
 		href: '/blog',
 		label: 'Blog'
 	},
-	{
-		href: '/shop',
-		label: 'Shop'
-	},
 ];
 
 export default routes;

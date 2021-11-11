@@ -1,3 +1,7 @@
+<script>
+	import skills from '$lib/Skills';
+</script>
+
 <svelte:head>
 	<title>Gianmarco Cavallo — About</title>
 	<!-- Global site tag (gtag.js) - Google Analytics -->
@@ -17,9 +21,31 @@
 	<main>
 		<h1>About</h1>
 		<p>
-			Hi, I'm Gianmarco, a front-end developer based in Italy. I'm a javascript and web technologies
-			enthusiast with a strong focus on UI/UX. I'm active in open-source community.
+			I'm a front-end developer based in Italy with a strong focus on the UI/UX.
+			<!--  -->
+			<!-- I'm a web technologies
+			enthusiast -->
+			I’m a fast learner. I learn new programming languages and technologies which best suit the project
+			to build high-quality software. I’m currently coding in Node.js, React.js and Go(lang), but I tend
+			to learn and use the best technology and approach to best solve the problem I'm facing
 		</p>
+		<h2>Skills</h2>
+		{#each Object.entries(skills) as [section, technologies]}
+			<ul>
+				<li>
+					<h4>
+						{section}:
+					</h4>
+					<div class="list">
+						{#each technologies as technology}
+							<div>
+								{technology}
+							</div>
+						{/each}
+					</div>
+				</li>
+			</ul>
+		{/each}
 	</main>
 </div>
 
@@ -32,8 +58,9 @@
 	}
 
 	main {
+		max-width: 100%;
 		min-height: 500px;
-		text-align: center;
+		text-align: left;
 		margin: 0 auto;
 		box-sizing: border-box;
 	}
@@ -45,7 +72,20 @@
 		text-align: start;
 	}
 
+	h2 {
+		margin-top: 50px;
+	}
+
+	.list {
+		display: flex;
+		flex-direction: column;
+		gap: 30px;
+	}
+
 	@media (min-width: 900px) {
+		.list {
+			flex-direction: row;
+		}
 		main > h1 {
 			font-size: 48px;
 		}
