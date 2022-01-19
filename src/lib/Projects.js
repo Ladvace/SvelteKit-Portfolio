@@ -8,7 +8,7 @@ const projects = [
 	},
 	{
 		title: 'WiseMan Discord Bot',
-		technologies: ['NodeJs', 'FireBase', 'MongoDb'],
+		technologies: ['NodeJs', 'FireBase', 'MongoDb', 'golang'],
 		description:
 			'The wiseMan bot allows you to level up based on the time you spend in a vocal channel',
 		url: 'https://github.com/Ladvace/WiseMan-DiscordBot'

@@ -21,13 +21,10 @@
 	<main>
 		<h1>About</h1>
 		<p>
-			I'm a front-end developer based in Italy with a strong focus on the UI/UX.
-			<!--  -->
-			<!-- I'm a web technologies
-			enthusiast -->
-			I’m a fast learner. I learn new programming languages and technologies which best suit the project
-			to build high-quality software. I’m currently coding in Node.js, React.js and Go(lang), but I tend
-			to learn and use the best technology and approach to best solve the problem I'm facing
+			I'm a Software developer with over 2 years of front-end development experience, experienced in
+			both enterprise and open-source software development. I'm based in Italy and currently working
+			as a freelancer and coding in Node.js, React.js (and other web technologies) and Go(lang), but
+			I tend to learn and use the best technology and approach to best solve the problem I'm facing.
 		</p>
 		<h2>Skills</h2>
 		{#each Object.entries(skills) as [section, technologies]}
