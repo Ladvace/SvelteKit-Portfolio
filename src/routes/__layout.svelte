@@ -259,7 +259,7 @@
 		display: flex;
 		justify-content: space-evenly;
 		align-items: center;
-		position: absolute;
+		position: fixed;
 		bottom: 50px;
 		left: 0;
 		right: 0;
