@@ -1,29 +1,36 @@
 <script context="module">
-	import { UserInfoEndpoint } from '$lib/Constants';
+	import { MediumFeedEndpoint, UserInfoEndpoint } from '$lib/Constants';
+	import { parse } from 'rss-to-json';
 	export async function load({ fetch }) {
-		let articles;
-
+		let devToArticles;
+		let mediumArticles;
 		try {
-			articles = await fetch(`${UserInfoEndpoint}ladvace`);
-			articles = await articles.json();
+			devToArticles = await fetch(`${UserInfoEndpoint}ladvace`);
+			mediumArticles = await parse(`${MediumFeedEndpoint}@ladvace`);
+
+			devToArticles = await devToArticles.json();
 		} catch (e) {
 			// console.error(e);
 		}
 
 		return {
 			props: {
-				articles
+				devToArticles,
+				mediumArticles: mediumArticles.items
 			}
 		};
 	}
 </script>
 
 <script>
-	export let articles;
+	export let devToArticles = [];
+	export let mediumArticles = [];
 
 	const blackListedArticles = [422939];
 
-	const filteredArticles = articles.filter((article) => !blackListedArticles.includes(article.id));
+	const articles = [...devToArticles, ...mediumArticles];
+
+	const filteredArticles = articles.filter((article) => !blackListedArticles.includes(article?.id));
 </script>
 
 <svelte:head>
@@ -40,13 +47,16 @@
 					<h2>
 						{article.title}
 					</h2>
-					<div>Tags: {article.tags}</div>
+					<div>Tags: {article.tags || article.category}</div>
 				</div>
 				<p>
-					{article.description}
+					{article.description || ''}
 				</p>
 
-				<a href={`/blog/${article.id}`}>
+				<a
+					href={article.id ? `/blog/${article.id}` : article.link}
+					target={!article.id ? '_blank' : '_self'}
+				>
 					<div class="button">Read Article =></div>
 				</a>
 			</div>

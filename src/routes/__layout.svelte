@@ -83,7 +83,7 @@
 		<Button>Send Email</Button>
 	</div>
 </Modal>
-<Navbar segment={$page.path} />
+<Navbar segment={$page.url.pathname} />
 
 <slot />
 

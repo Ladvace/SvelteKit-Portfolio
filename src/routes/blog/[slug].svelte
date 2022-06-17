@@ -1,17 +1,13 @@
 <script context="module">
 	import { ArticleEndPoint } from '$lib/Constants';
-	export async function load({ fetch, page }) {
-		try {
-			let article = await fetch(`${ArticleEndPoint}/${page.params.slug}`);
-			article = await article.json();
-			return {
-				props: {
-					article
-				}
-			};
-		} catch (e) {
-			// console.error(e);
-		}
+	export async function load({ params, fetch }) {
+		let response = await fetch(`${ArticleEndPoint}/${params.slug}`);
+		return {
+			status: response.status,
+			props: {
+				article: response.ok && (await response.json())
+			}
+		};
 	}
 </script>
 
@@ -22,16 +18,18 @@
 </script>
 
 <svelte:head>
-	<title>Gianmarco Cavallo — {article.title}</title>
+	<title>Gianmarco Cavallo — {article?.title || 'Missing article'}</title>
 </svelte:head>
 
 <div class="articleContainer">
 	<div class="article">
-		<h1 class="title">
-			<a href={article.url} target="_blank">{article.title} </a>
-			<div class="icon" href={article.url} target="_blank"><FaExternalLinkAlt /></div>
-		</h1>
-		{@html article.body_html}
+		{#if article}
+			<h1 class="title">
+				<a href={article.url} target="_blank">{article.title} </a>
+				<div class="icon" href={article.url} target="_blank"><FaExternalLinkAlt /></div>
+			</h1>
+			{@html article.body_html}
+		{/if}
 	</div>
 </div>
 
