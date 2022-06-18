@@ -114,6 +114,7 @@
 		height: 100%;
 		overflow: auto;
 		font-family: 'Fira Code', monospace;
+		font-display: optional;
 	}
 
 	:global(body) {
@@ -249,22 +250,22 @@
 	}
 	@media (min-width: 600px) {
 		.cookieContainer {
-		background: white;
-		border-radius: 50px;
-		text-align: center;
-		width: 350px;
-		height: 30px;
-		color: black;
-		padding: 0 10px;
-		display: flex;
-		justify-content: space-evenly;
-		align-items: center;
-		position: fixed;
-		bottom: 50px;
-		left: 0;
-		right: 0;
-		margin-left: auto;
-		margin-right: auto;
-	}
+			background: white;
+			border-radius: 50px;
+			text-align: center;
+			width: 350px;
+			height: 30px;
+			color: black;
+			padding: 0 10px;
+			display: flex;
+			justify-content: space-evenly;
+			align-items: center;
+			position: fixed;
+			bottom: 50px;
+			left: 0;
+			right: 0;
+			margin-left: auto;
+			margin-right: auto;
+		}
 	}
 </style>
