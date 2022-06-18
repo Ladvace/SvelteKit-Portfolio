@@ -16,16 +16,16 @@
 		</div>
 		<div class="buttons">
 			{#each routes as route}
-				<a class="button" href={route.href}
-					><div class={segment === route.href && 'selected'}>{route.label}</div></a
+				<a class={`button ${segment === route.href ? 'selected' : ''}`} href={route.href}
+					>{route.label}</a
 				>
 			{/each}
 		</div>
 	</div>
 	<div class="responsiveButtons buttons">
 		{#each routes as route}
-			<a class="button" href={route.href}
-				><div class={segment === route.href && 'selected'}>{route.label}</div></a
+			<a class={`button ${segment === route.href ? 'selected' : ''}`} href={route.href}
+				>{route.label}</a
 			>
 		{/each}
 	</div>
@@ -47,10 +47,20 @@
 
 	.selected {
 		position: relative;
-		font-weight: 800;
+		color: white;
 	}
 
-	.selected:after {
+	.button:hover::after {
+		content: '';
+		background: #ca3c25;
+		display: block;
+		height: 3px;
+		width: 100%;
+		position: absolute;
+		bottom: 0;
+	}
+
+	.button.selected:after {
 		content: '';
 		background: #ca3c25;
 		display: block;
@@ -91,7 +101,7 @@
 		display: none;
 		justify-content: space-between;
 		align-items: center;
-		font-weight: 400;
+		font-weight: 500;
 	}
 
 	.responsiveButtons {
@@ -112,23 +122,13 @@
 		cursor: pointer;
 		transition: color 0.2s ease-in-out;
 		text-decoration: none;
-		color: white;
 		position: relative;
-	}
-
-	.button div {
-		padding: 0;
 		margin: 10px;
+		color: hsla(0, 0%, 100%, 0.4);
 	}
-	.button div:hover {
-		color: white;
-		cursor: pointer;
 
-		background: linear-gradient(155deg, rgba(255, 255, 255, 0.15), transparent);
-		-webkit-backdrop-filter: blur(20px);
-		backdrop-filter: blur(20px);
-		-webkit-animation: cardWobble 10000ms infinite;
-		animation: cardWobble 10000ms infinite;
+	.button.selected {
+		color: white;
 	}
 
 	.burger :global(button) {
