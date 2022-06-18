@@ -1,6 +1,6 @@
 <script context="module">
 	import { MediumFeedEndpoint, UserInfoEndpoint } from '$lib/Constants';
-	import { parse } from 'rss-to-json';
+	import parse from 'rss-to-json';
 	export async function load({ fetch }) {
 		let devToArticles;
 		let mediumArticles;
