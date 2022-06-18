@@ -81,6 +81,7 @@
 
 	.innerContainer :global(a) {
 		height: 30px;
+		color: white;
 	}
 
 	.NavBar {
