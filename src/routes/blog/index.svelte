@@ -6,17 +6,17 @@
 		let mediumArticles;
 		try {
 			devToArticles = await fetch(`${UserInfoEndpoint}ladvace`);
-			mediumArticles = await parse(`${MediumFeedEndpoint}@ladvace`);
+			// mediumArticles = await parse(`${MediumFeedEndpoint}@ladvace`);
 
 			devToArticles = await devToArticles.json();
 		} catch (e) {
-			// console.error(e);
+			console.error(e);
 		}
 
 		return {
 			props: {
 				devToArticles,
-				mediumArticles: mediumArticles.items
+				// mediumArticles: mediumArticles.items
 			}
 		};
 	}

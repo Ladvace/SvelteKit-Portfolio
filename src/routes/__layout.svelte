@@ -1,23 +1,3 @@
-<script context="module">
-	export async function load() {
-		let showCookieModal;
-
-		try {
-			const showCookie = localStorage.getItem('showCookieModal');
-			if (showCookie !== null) showCookieModal = JSON.parse(showCookie);
-			else showCookieModal = true;
-		} catch (e) {
-			// console.error(e);
-		}
-
-		return {
-			props: {
-				showCookieModal
-			}
-		};
-	}
-</script>
-
 <script>
 	import Navbar from '$lib/components/NavBar.svelte';
 	import Button from '$lib/components/Button.svelte';
@@ -27,10 +7,11 @@
 
 	import { page } from '$app/stores';
 	import Modal from '$lib/components/Modal.svelte';
+	import { onMount } from 'svelte';
 
 	let copied = false;
 	let email = 'cavallogianmarco@gmail.com';
-	export let showCookieModal;
+	$: showCookieModal = false;
 
 	const copy = () => {
 		const app = new CopyClipBoard({
@@ -39,6 +20,12 @@
 		});
 		app.$destroy();
 	};
+
+	onMount(() => {
+		const showCookie = localStorage.getItem('showCookieModal');
+		if (showCookie !== null) showCookieModal = JSON.parse(showCookie);
+		else showCookieModal = true;
+	});
 </script>
 
 {#if showCookieModal}
@@ -95,6 +82,12 @@
 <style>
 	* {
 		box-sizing: border-box;
+	}
+
+	@font-face {
+		font-family: 'Fira Code', monospace;
+		font-display: optional;
+		src: url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap');
 	}
 
 	:global(#svelte) {
