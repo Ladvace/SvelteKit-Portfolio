@@ -107,7 +107,6 @@
 		height: 100%;
 		overflow: auto;
 		font-family: 'Fira Code', monospace;
-		font-display: optional;
 	}
 
 	:global(body) {
@@ -233,7 +232,7 @@
 	}
 
 	footer .me {
-		color: #ca3c25;
+		color: #ff3e00;
 	}
 
 	@media (min-width: 900px) {
