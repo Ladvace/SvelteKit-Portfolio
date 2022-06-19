@@ -4,14 +4,32 @@
 	import FaCopy from 'svelte-icons/fa/FaCopy.svelte';
 	import Tooltip from '$lib/components/Tooltip.svelte';
 	import CopyClipBoard from '$lib/components/CopyToClipBoard.svelte';
+	import { beforeNavigate } from '$app/navigation';
 
 	import { page } from '$app/stores';
 	import Modal from '$lib/components/Modal.svelte';
 	import { onMount } from 'svelte';
+	import { customBackground } from '$lib/store';
+	import routes from '$lib/NavRoutes';
 
 	let copied = false;
 	let email = 'cavallogianmarco@gmail.com';
 	$: showCookieModal = false;
+
+	const cssVariables = (node, variables) => {
+		setCssVariables(node, variables);
+
+		return {
+			update(variables) {
+				setCssVariables(node, variables);
+			}
+		};
+	};
+	const setCssVariables = (node, variables) => {
+		for (const name in variables) {
+			node.style.setProperty(`--${name}`, variables[name]);
+		}
+	};
 
 	const copy = () => {
 		const app = new CopyClipBoard({
@@ -26,7 +44,19 @@
 		if (showCookie !== null) showCookieModal = JSON.parse(showCookie);
 		else showCookieModal = true;
 	});
+
+	beforeNavigate((e) => {
+		console.log('BEFORENAVIGATE', e);
+		const pathName = e.to.pathname;
+		const route = routes.find((route) => pathName === route.href);
+		console.log('onNavigate', pathName, route);
+		if (!route.customColor) {
+			customBackground.set('#0a0908');
+		} else customBackground.set(route.customColor);
+	});
 </script>
+
+<svelte:body use:cssVariables={{ background: $customBackground }} />
 
 {#if showCookieModal}
 	<div class="cookieContainer">
@@ -102,6 +132,7 @@
 
 	:global(html),
 	:global(body) {
+		transition: background-color 0.2s ease 0s;
 		position: relative;
 		width: 100%;
 		height: 100%;
@@ -110,8 +141,8 @@
 	}
 
 	:global(body) {
-		/* background-color: #09090b; */
-		background-color: #0a0908;
+		/* background-color: #0a0908; */
+		background-color: var(--background);
 		background-size: 200% 200%;
 		color: white;
 		margin: 0;
