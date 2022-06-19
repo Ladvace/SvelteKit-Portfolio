@@ -13,19 +13,8 @@
 </script>
 
 <svelte:head>
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
-	<script>
-		window.dataLayer = window.dataLayer || [];
-		function gtag() {
-			window.dataLayer.push(arguments);
-		}
-		gtag('js', new Date());
-
-		gtag('config', 'G-B4HJHY6RC4');
-	</script>
+	<title>Gianmarco Cavallo - Main page</title>
 </svelte:head>
-
 <main>
 	<h1>Hi!✋ <br /> I'm Gianmarco a Front-End Developer 💻 based in Italy</h1>
 	<div class="icons">
