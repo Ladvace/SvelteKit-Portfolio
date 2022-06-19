@@ -12,7 +12,7 @@ To view a demo example, **[click here](https://gianmarco.xyz)**
 
 - Modern and Minimal UI Design
 - Home, Projects, About and blog sections
-- Blog made using `DEV.TO` API.
+- Blog made using `DEV.TO` API. (Medium WIP)
 - Fully Responsive
 - Performances and SEO optimizations
 - Ready to be deployed on [Netlify](https://www.netlify.com/)
