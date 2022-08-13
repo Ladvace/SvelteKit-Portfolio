@@ -2,32 +2,33 @@
 	"name": "gianmarco.xyz",
 	"version": "0.0.1",
 	"scripts": {
-		"dev": "svelte-kit dev",
-		"build": "svelte-kit build",
-		"start": "svelte-kit start",
+		"dev": "vite dev",
+		"build": "vite build",
+		"start": "vite start",
 		"lint": "prettier --check . && eslint .",
 		"format": "prettier --write ."
 	},
 	"devDependencies": {
-		"@sveltejs/adapter-netlify": "^1.0.0-next.64",
+		"@sveltejs/adapter-netlify": "^1.0.0-next.71",
 		"@sveltejs/adapter-node": "next",
 		"@sveltejs/kit": "next",
-		"eslint": "^8.17.0",
+		"@sveltejs/vite-plugin-svelte": "^1.0.1",
+		"eslint": "^8.21.0",
 		"eslint-config-prettier": "^8.5.0",
 		"eslint-plugin-svelte3": "^4.0.0",
 		"prettier": "~2.7.1",
 		"prettier-plugin-svelte": "^2.7.0",
-		"sass": "^1.52.3",
-		"svelte": "^3.48.0",
+		"sass": "^1.54.4",
+		"svelte": "^3.49.0",
 		"svelte-preprocess": "^4.10.7",
-		"vite": "^2.3.3"
+		"vite": "^3.0.7"
 	},
 	"type": "module",
 	"engines": {
 		"node": ">= 12.17.0"
 	},
 	"dependencies": {
-		"rss-to-json": "^2.0.2",
+		"rss-to-json": "^2.1.0",
 		"svelte-icons": "^2.1.0"
 	}
 }
