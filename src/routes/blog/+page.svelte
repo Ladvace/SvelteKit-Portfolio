@@ -1,28 +1,32 @@
 <script context="module">
-	import { MediumFeedEndpoint, UserInfoEndpoint } from '$lib/Constants';
-	import parse from 'rss-to-json';
-	export async function load({ fetch }) {
-		let devToArticles;
-		let mediumArticles;
-		try {
-			devToArticles = await fetch(`${UserInfoEndpoint}ladvace`);
-			// mediumArticles = await parse(`${MediumFeedEndpoint}@ladvace`);
+	throw new Error("@migration task: Check code was safely removed (https://github.com/sveltejs/kit/discussions/5774#discussioncomment-3292722)");
 
-			devToArticles = await devToArticles.json();
-		} catch (e) {
-			console.error(e);
-		}
+	// import { MediumFeedEndpoint, UserInfoEndpoint } from '$lib/Constants';
+	// import parse from 'rss-to-json';
+	// export async function load({ fetch }) {
+	// 	let devToArticles;
+	// 	let mediumArticles;
+	// 	try {
+	// 		devToArticles = await fetch(`${UserInfoEndpoint}ladvace`);
+	// 		// mediumArticles = await parse(`${MediumFeedEndpoint}@ladvace`);
 
-		return {
-			props: {
-				devToArticles,
-				// mediumArticles: mediumArticles.items
-			}
-		};
-	}
+	// 		devToArticles = await devToArticles.json();
+	// 	} catch (e) {
+	// 		console.error(e);
+	// 	}
+
+	// 	return {
+	// 		props: {
+	// 			devToArticles,
+	// 			// mediumArticles: mediumArticles.items
+	// 		}
+	// 	};
+	// }
 </script>
 
 <script>
+	throw new Error("@migration task: Add data prop (https://github.com/sveltejs/kit/discussions/5774#discussioncomment-3292707)");
+
 	export let devToArticles = [];
 	export let mediumArticles = [];
 
