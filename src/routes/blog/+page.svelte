@@ -1,38 +1,10 @@
-<script context="module">
-	throw new Error("@migration task: Check code was safely removed (https://github.com/sveltejs/kit/discussions/5774#discussioncomment-3292722)");
-
-	// import { MediumFeedEndpoint, UserInfoEndpoint } from '$lib/Constants';
-	// import parse from 'rss-to-json';
-	// export async function load({ fetch }) {
-	// 	let devToArticles;
-	// 	let mediumArticles;
-	// 	try {
-	// 		devToArticles = await fetch(`${UserInfoEndpoint}ladvace`);
-	// 		// mediumArticles = await parse(`${MediumFeedEndpoint}@ladvace`);
-
-	// 		devToArticles = await devToArticles.json();
-	// 	} catch (e) {
-	// 		console.error(e);
-	// 	}
-
-	// 	return {
-	// 		props: {
-	// 			devToArticles,
-	// 			// mediumArticles: mediumArticles.items
-	// 		}
-	// 	};
-	// }
-</script>
-
 <script>
-	throw new Error("@migration task: Add data prop (https://github.com/sveltejs/kit/discussions/5774#discussioncomment-3292707)");
-
-	export let devToArticles = [];
-	export let mediumArticles = [];
+	export let data;
+	let devToArticles = data.devToArticles;
 
 	const blackListedArticles = [422939];
 
-	const articles = [...devToArticles, ...mediumArticles];
+	const articles = [...devToArticles];
 
 	const filteredArticles = articles.filter((article) => !blackListedArticles.includes(article?.id));
 </script>

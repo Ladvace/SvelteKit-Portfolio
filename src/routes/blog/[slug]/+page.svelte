@@ -1,24 +1,8 @@
-<script context="module">
-	throw new Error("@migration task: Check code was safely removed (https://github.com/sveltejs/kit/discussions/5774#discussioncomment-3292722)");
-
-	// import { ArticleEndPoint } from '$lib/Constants';
-	// export async function load({ params, fetch }) {
-	// 	let response = await fetch(`${ArticleEndPoint}/${params.slug}`);
-	// 	return {
-	// 		status: response.status,
-	// 		props: {
-	// 			article: response.ok && (await response.json())
-	// 		}
-	// 	};
-	// }
-</script>
-
 <script>
-	throw new Error("@migration task: Add data prop (https://github.com/sveltejs/kit/discussions/5774#discussioncomment-3292707)");
-
 	import FaExternalLinkAlt from 'svelte-icons/fa/FaExternalLinkAlt.svelte';
 
-	export let article;
+	export let data;
+	let article = data.article;
 </script>
 
 <svelte:head>
@@ -29,7 +13,7 @@
 	<div class="article">
 		{#if article}
 			<h1 class="title">
-				<a href={article.url} target="_blank">{article.title} </a>
+				<a href={article.url} target="_blank" rel="noreferrer">{article.title} </a>
 				<div class="icon" href={article.url} target="_blank"><FaExternalLinkAlt /></div>
 			</h1>
 			{@html article.body_html}

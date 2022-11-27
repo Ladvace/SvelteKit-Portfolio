@@ -14,6 +14,7 @@
 
 	let copied = false;
 	let email = 'cavallogianmarco@gmail.com';
+	const cookieEnabled = false;
 	$: showCookieModal = false;
 
 	const cssVariables = (node, variables) => {
@@ -25,6 +26,7 @@
 			}
 		};
 	};
+
 	const setCssVariables = (node, variables) => {
 		for (const name in variables) {
 			node.style.setProperty(`--${name}`, variables[name]);
@@ -45,22 +47,21 @@
 		else showCookieModal = true;
 	});
 
-	beforeNavigate((e) => {
-		console.log('BEFORENAVIGATE', e);
-		const pathName = e.to.pathname;
-		const route = routes.find((route) => pathName === route.href);
-		console.log('onNavigate', pathName, route);
-		if (!route.customColor) {
-			customBackground.set('#0a0908');
-		} else customBackground.set(route.customColor);
-	});
+	// beforeNavigate(({ to }) => {
+	// 	const pathName = to.pathname;
+	// 	const route = routes.find((route) => pathName === route.href);
+	// 	if (!route.customColor) {
+	// 		customBackground.set('#0a0908');
+	// 	} else customBackground.set(route.customColor);
+	// });
 </script>
 
 <svelte:body use:cssVariables={{ background: $customBackground }} />
 
-{#if showCookieModal}
+{#if showCookieModal && cookieEnabled}
 	<div class="cookieContainer">
 		<p>🍪 This website use <a href="privacy-policy">Cookies.</a></p>
+		<!-- svelte-ignore a11y-click-events-have-key-events -->
 		<div
 			on:click={() => {
 				showCookieModal = false;

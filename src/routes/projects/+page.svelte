@@ -10,9 +10,8 @@
 	<div class="projects">
 		<h1>Projects</h1>
 		<p class="note">
-			Note: most of my projects are under NDA so I am unable to share
-			those projects. If there is anything you would like to see further, please feel free to
-			contact me.
+			Note: most of my projects are under NDA so I am unable to share those projects. If there is
+			anything you would like to see further, please feel free to contact me.
 		</p>
 		{#each projects as project}
 			<div class="project">
@@ -32,7 +31,7 @@
 				<p>
 					{project.description}
 				</p>
-				<a href={project.url} target="_blank">
+				<a href={project.url} target="_blank" rel="noreferrer">
 					<div class="button">Project url =></div>
 				</a>
 			</div>

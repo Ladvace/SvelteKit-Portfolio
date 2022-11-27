@@ -1,4 +1,6 @@
 import { UserInfoEndpoint } from '$lib/Constants';
+import { error } from '@sveltejs/kit';
+
 export async function load({ fetch }) {
 	let devToArticles;
 	try {
@@ -6,7 +8,7 @@ export async function load({ fetch }) {
 
 		devToArticles = await devToArticles.json();
 	} catch (e) {
-		// console.error(e);
+		throw error(404, 'Not found');
 	}
 
 	return {
