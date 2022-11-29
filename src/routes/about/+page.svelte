@@ -38,7 +38,7 @@
 <style>
 	.container {
 		max-width: 900px;
-		padding: 1em;
+		padding: 0;
 		display: flex;
 		justify-content: center;
 	}
