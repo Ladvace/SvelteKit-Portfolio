@@ -11,7 +11,7 @@
 	"devDependencies": {
 		"@sveltejs/adapter-netlify": "^1.0.0-next.84",
 		"@sveltejs/adapter-node": "^1.0.0-next.101",
-		"@sveltejs/kit": "next",
+		"@sveltejs/kit": "^1.0.0-next.567",
 		"eslint": "^8.28.0",
 		"eslint-config-prettier": "^8.5.0",
 		"eslint-plugin-svelte3": "^4.0.0",
@@ -19,9 +19,9 @@
 		"prettier-plugin-svelte": "^2.8.1",
 		"sass": "^1.56.1",
 		"svelte": "^3.53.1",
+		"svelte-icons": "^2.1.0",
 		"svelte-preprocess": "^4.10.7",
-		"vite": "^3.2.4",
-		"svelte-icons": "^2.1.0"
+		"vite": "^3.2.4"
 	},
 	"type": "module"
 }
