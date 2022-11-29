@@ -6,10 +6,6 @@
 	import FaMedium from 'svelte-icons/fa/FaMedium.svelte';
 	import { prefetchRoutes } from '$app/navigation';
 	import { modalOpened } from '$lib/store';
-
-	onMount(() => {
-		prefetchRoutes();
-	});
 </script>
 
 <svelte:head>
