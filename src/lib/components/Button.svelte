@@ -1,13 +1,21 @@
 <script>
 	import { goto } from '$app/navigation';
+	import { Email } from '$lib/Constants';
 </script>
 
-<div class="button" on:click={() => goto('mailto:cavallogianmarco@gmail.com')}>
+<div
+	class="button"
+	role="button"
+	tabindex="0"
+	on:keypress={() => {
+		goto(`mailto:${Email}`);
+	}}
+	on:click={() => goto(`mailto:${Email}`)}
+>
 	<slot />
 </div>
 
 <style>
-
 	.button {
 		cursor: pointer;
 		height: 40px;

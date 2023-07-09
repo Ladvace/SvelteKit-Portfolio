@@ -14,7 +14,7 @@ const routes = [
 	{
 		href: '/blog',
 		label: 'Blog'
-	},
+	}
 ];
 
 export default routes;

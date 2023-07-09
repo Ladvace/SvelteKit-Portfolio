@@ -1,3 +1,7 @@
+<script>
+	import { Email } from '$lib/Constants';
+</script>
+
 <svelte:head>
 	<title>Gianmarco Cavallo - Privacy policy</title>
 </svelte:head>
@@ -402,7 +406,7 @@
 		<h1>Contact Us</h1>
 		<p>If you have any questions about this Privacy Policy, You can contact us:</p>
 		<ul>
-			<li>By email: cavallogianmarco@gmail.com</li>
+			<li>By email: {Email}</li>
 		</ul>
 	</main>
 </div>

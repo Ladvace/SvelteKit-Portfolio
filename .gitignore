@@ -89,3 +89,7 @@ typings/
 
 #.svelte-kit
 .svelte-kit/
+
+
+.netlify/*
+build/*

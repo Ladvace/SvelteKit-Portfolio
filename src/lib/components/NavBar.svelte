@@ -1,9 +1,9 @@
-<script>
+<script lang="ts">
 	import Burger from './Hamburger.svelte';
 	import Logo from '$lib/assets/logo.svg';
 	import routes from '$lib/NavRoutes';
 	let opened = false;
-	export let segment;
+	export let segment: string;
 </script>
 
 <div class={opened ? 'NavBar open' : 'NavBar'}>

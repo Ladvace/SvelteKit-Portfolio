@@ -1,5 +1,5 @@
 <script>
-	import { modalOpened } from '$lib/store.js';
+	import { modalOpened } from '$lib/store';
 	let isOpen = false;
 	let closing = false;
 
@@ -18,7 +18,7 @@
 
 {#if isOpen}
 	<div class={`modal ${closing && 'closing'}`}>
-		<div class="backdrop" on:click={close} />
+		<div class="backdrop" on:click={close} role="button" tabindex="0" on:keypress={close} />
 		<div class="content-wrapper">
 			<div class="content">
 				<slot name="content" />

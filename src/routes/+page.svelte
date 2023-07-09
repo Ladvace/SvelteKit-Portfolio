@@ -13,6 +13,11 @@
 	<h1>Hi!✋ <br /> I'm Gianmarco a Front-End Developer 💻 based in Italy</h1>
 	<div class="icons">
 		<div
+			role="button"
+			tabindex="0"
+			on:keypress={() => {
+				modalOpened.set(true);
+			}}
 			on:click={() => {
 				modalOpened.set(true);
 			}}

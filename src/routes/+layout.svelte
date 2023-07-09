@@ -1,44 +1,45 @@
-<script>
+<script lang="ts">
 	import Navbar from '$lib/components/NavBar.svelte';
 	import Button from '$lib/components/Button.svelte';
 	import FaCopy from 'svelte-icons/fa/FaCopy.svelte';
 	import Tooltip from '$lib/components/Tooltip.svelte';
-	import CopyClipBoard from '$lib/components/CopyToClipBoard.svelte';
-	import { beforeNavigate } from '$app/navigation';
-
+	// import { beforeNavigate } from '$app/navigation';
 	import { page } from '$app/stores';
 	import Modal from '$lib/components/Modal.svelte';
 	import { onMount } from 'svelte';
 	import { customBackground } from '$lib/store';
-	import routes from '$lib/NavRoutes';
+	import { Email } from '$lib/Constants';
+	// import routes from '$lib/NavRoutes';
 
 	let copied = false;
-	let email = 'cavallogianmarco@gmail.com';
 	const cookieEnabled = false;
 	$: showCookieModal = false;
 
-	const cssVariables = (node, variables) => {
+	interface CssVariables {
+		[name: string]: string;
+	}
+
+	const cssVariables = (
+		node: HTMLElement,
+		variables: CssVariables
+	): { update: (variables: CssVariables) => void } => {
 		setCssVariables(node, variables);
 
 		return {
-			update(variables) {
+			update(variables: CssVariables) {
 				setCssVariables(node, variables);
 			}
 		};
 	};
 
-	const setCssVariables = (node, variables) => {
+	const setCssVariables = (node: HTMLElement, variables: CssVariables): void => {
 		for (const name in variables) {
 			node.style.setProperty(`--${name}`, variables[name]);
 		}
 	};
 
 	const copy = () => {
-		const app = new CopyClipBoard({
-			target: document.getElementById('clipboard'),
-			props: { email }
-		});
-		app.$destroy();
+		navigator.clipboard.writeText(Email);
 	};
 
 	onMount(() => {
@@ -61,11 +62,16 @@
 {#if showCookieModal && cookieEnabled}
 	<div class="cookieContainer">
 		<p>🍪 This website use <a href="privacy-policy">Cookies.</a></p>
-		<!-- svelte-ignore a11y-click-events-have-key-events -->
 		<div
+			role="button"
+			tabindex="0"
+			on:keypress={() => {
+				showCookieModal = false;
+				localStorage.setItem('showCookieModal', 'false');
+			}}
 			on:click={() => {
 				showCookieModal = false;
-				localStorage.setItem('showCookieModal', false);
+				localStorage.setItem('showCookieModal', 'false');
 			}}
 		>
 			&#10005;
@@ -77,12 +83,21 @@
 	<div slot="content" class="modalContainer">
 		<h1>Email:</h1>
 		<div>
-			<p>{email}</p>
+			<p>{Email}</p>
 			&nbsp;
 			<div class="tooltip">
 				<Tooltip tooltip={copied ? 'Copied' : 'Copy'}>
 					<div
 						id="clipboard"
+						role="button"
+						tabindex="0"
+						on:keypress={() => {
+							copied = true;
+							copy();
+							setTimeout(() => {
+								copied = false;
+							}, 500);
+						}}
 						on:click={() => {
 							copied = true;
 							copy();
