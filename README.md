@@ -6,7 +6,7 @@
     <img width="500" height="auto" src="https://i.imgur.com/IafmSKu.png" alt="homepagescreenshot" />
 </p>
 
-To view a demo example, **[click here](https://gianmarco.xyz)**
+To view a demo example, **[click here](https://gianmarco.netlify.app/)**
 
 ## Features
 
